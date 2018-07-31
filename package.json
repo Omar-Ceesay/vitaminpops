@@ -1,0 +1,24 @@
+{
+  "name": "vitaminpops",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Omar-Ceesay/vitaminpops.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Omar-Ceesay/vitaminpops/issues"
+  },
+  "homepage": "https://github.com/Omar-Ceesay/vitaminpops#readme",
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "paypal-rest-sdk": "^1.8.1"
+  }
+}
