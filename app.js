@@ -32,14 +32,15 @@ app.post('/pay', (req, res) => {
     }
     var total = Number(data.price) * quantity;
     console.log(total+ "\n");
+
     var create_payment_json = {
       "intent": "sale",
       "payer": {
           "payment_method": "paypal"
       },
       "redirect_urls": {
-          "return_url": "http://localhost:3000/success/"+data.sku+"/"+total.toString(),
-          "cancel_url": "http://localhost:3000/cancel"``
+          "return_url": "https://vitamin-pops.herokuapp.com/success/"+data.sku+"/"+total.toString(),
+          "cancel_url": "https://vitamin-pops.herokuapp.com/cancel"
       },
       "transactions": [{
           "item_list": {
