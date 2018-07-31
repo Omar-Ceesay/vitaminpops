@@ -6,8 +6,8 @@ var path = require('path');
 
 paypal.configure({
   'mode': 'sandbox', //sandbox or live
-  'client_id': 'AcvNEfgIaD_MZhbHFIzIrnKzhYaIOOU2YGysV5EpHVkzst4NM5ZRw9tTuV9a-unAlEPUnlu4-c1zj6fl',
-  'client_secret': 'ELRpa2gB2WrClhHk6uv8d23i5K0WYmOUARAYk7wviFuAUFatewB5BI1iT68eTgp5-Kz6maw_za76qe3y'
+  'client_id': process.env.CLIENT_ID,
+  'client_secret': process.env.CLIENT_SECRET
 });
 
 const app = express();
@@ -32,7 +32,10 @@ app.post('/pay', (req, res) => {
     }
     var total = Number(data.price) * quantity;
     console.log(total+ "\n");
-
+    var return_url = "";
+    if(!process.env.PORT){
+      return_url = "https://localhost/3000";
+    }
     var create_payment_json = {
       "intent": "sale",
       "payer": {
