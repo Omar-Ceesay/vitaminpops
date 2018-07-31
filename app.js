@@ -102,4 +102,4 @@ app.get('/cancel', (req, res) => {
   res.send('Canceled');
 });
 
-app.listen(3000 || process.env.PORT, "0.0.0.0");
+app.listen(process.env.PORT || 3000, "0.0.0.0");
